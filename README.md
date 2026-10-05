@@ -13,10 +13,12 @@ The repository is being set up as part of the **FE-01: Environment and AI Toolch
 - **React**: UI library
 - **JavaScript**: main language
 - **Tailwind CSS**: styling
-- **Vite**: build tool and dev server (planned)
-- **AI tooling**: AI-assisted development with Claude Code
 
-The stack may change as the project develops.
+Build tooling and any additional libraries have not been chosen yet. They will be listed here once decided.
+
+## Development Tools
+
+- **Claude Code**: AI-assisted development. This is not part of the application stack. Guidelines for AI assistants working in this repository are in [CLAUDE.md](CLAUDE.md).
 
 ## Planned Features
 
