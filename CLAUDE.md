@@ -5,15 +5,45 @@ Guidance for AI-assisted development in this repository.
 ## Project Context
 
 - This is the capstone project for the **Frontend AI Engineering** track.
-- The project is in the **setup stage**. There is no application code yet; the repository contains only `README.md`, `LICENSE`, `.gitignore`, and this file.
+- The project is in the **early setup stage**. The tooling is set up, and the app currently contains only a placeholder `App` component and one test. No features have been built yet.
 
-## Planned Technology
+## Technology
 
-- **React**
-- **JavaScript**
-- **Tailwind CSS**
+- **React** (19) with **JavaScript** (`.jsx`, no TypeScript)
+- **Vite**: build tool and dev server
+- **Tailwind CSS** (v4), added through the `@tailwindcss/vite` plugin. There is no `tailwind.config.js`; Tailwind is loaded by `@import "tailwindcss";` in `src/index.css`.
+- **Vitest** with **React Testing Library**, running in a **jsdom** environment
 
 Do not assume any other frameworks, libraries, databases, or backend technologies. Only treat something as part of the stack once it has actually been added to the project.
+
+## Project Structure
+
+```
+index.html          Vite entry HTML
+vite.config.js      Vite plugins (React, Tailwind) and Vitest config
+package.json        Dependencies and npm scripts
+src/
+  main.jsx          Mounts <App /> into #root
+  index.css         Tailwind import
+  App.jsx           Root component (placeholder)
+  App.test.jsx      Test for App
+```
+
+## Commands
+
+- `npm install`: install dependencies
+- `npm run dev`: start the Vite dev server
+- `npm run build`: production build to `dist/`
+- `npm run preview`: serve the production build locally
+- `npm test`: run Vitest in watch mode
+- `npm run test:run`: run all tests once (use this to verify changes)
+
+## Testing Conventions
+
+- Put test files next to the code they test, named `*.test.jsx`.
+- Vitest globals are not enabled: import `describe`, `it`, `expect`, and `afterEach` from `vitest`, and call `afterEach(cleanup)` in files that render components.
+- `@testing-library/jest-dom` is not installed, so matchers like `toBeInTheDocument()` are not available. Use the built-in Vitest matchers instead (for example, `getByRole` throws if the element is missing).
+- Prefer accessible queries such as `getByRole` and `getByLabelText`.
 
 ## Code Conventions
 

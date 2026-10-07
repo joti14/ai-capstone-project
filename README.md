@@ -1,6 +1,6 @@
 # AI Capstone Project
 
-> **Status:** Early setup. The application has not been built yet.
+> **Status:** Early setup. The tooling is set up, but no features have been built yet.
 
 ## Overview
 
@@ -8,13 +8,13 @@ This repository holds the capstone project for the **Frontend AI Engineering** t
 
 The repository is being set up as part of the **FE-01: Environment and AI Toolchain** assignment.
 
-## Planned Tech Stack
+## Tech Stack
 
 - **React**: UI library
 - **JavaScript**: main language
 - **Tailwind CSS**: styling
-
-Build tooling and any additional libraries have not been chosen yet. They will be listed here once decided.
+- **Vite**: build tool and dev server
+- **Vitest** + **React Testing Library**: testing
 
 ## Development Tools
 
@@ -32,7 +32,7 @@ _Features will be defined and built during the capstone phase._
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (LTS version recommended)
+- [Node.js](https://nodejs.org/) 22 (22.13 or newer) or 24 LTS
 - npm (comes with Node.js)
 - Git
 
@@ -43,14 +43,22 @@ _Features will be defined and built during the capstone phase._
 git clone <repository-url>
 cd ai-capstone-project
 
-# Install dependencies (once the app is set up)
+# Install dependencies
 npm install
 
-# Start the development server (once the app is set up)
+# Start the development server
 npm run dev
 ```
 
-Detailed setup steps and development guidelines will be added once the app is set up.
+### Scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Vite dev server |
+| `npm run build` | Build for production into `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm test` | Run tests in watch mode |
+| `npm run test:run` | Run all tests once |
 
 ## License
 
